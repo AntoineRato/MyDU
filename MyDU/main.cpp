@@ -43,7 +43,11 @@ int getSizeFoler(boost::filesystem::path folderPath)
     }
 
     sizeFiles += 4096;
-    cout << sizeFiles << "\t" << folderPath << endl;
+
+    if(folderPath.string() == "./")
+        cout << sizeFiles << "\t" << "." << endl;
+    else
+        cout << sizeFiles << "\t" << folderPath.string() << endl;
 
     return sizeFiles;
 }
